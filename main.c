@@ -1,3 +1,4 @@
+//main.c
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 5
@@ -35,20 +36,20 @@ int main()
 
 
     if((leftmost == pos) && (rightmost == pos)){
-        printf("Moved to Spot %d\n", pos+1);
+        printf("%d. Moved to Spot %d\n", cost, pos+1);
         if(lane[pos] == 1){
             cost++;
-            printf("Ticket Issued at Spot %d\n", pos+1);
+            printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
             lane[pos] = 0;
         }
     }
     else
     if(rightmost == pos){
         while(pos >= leftmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos--;
@@ -58,10 +59,10 @@ int main()
     else
     if(leftmost == pos){
         while(pos <= rightmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", cost, pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos++;
@@ -71,20 +72,20 @@ int main()
     else
     if((pos - leftmost) < (rightmost - pos)){
         while(pos > leftmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", cost, pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos--;
             cost++;
         }
         while(pos <= rightmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", cost, pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos++;
@@ -94,20 +95,20 @@ int main()
 
     else{
         while(pos < rightmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", cost, pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos++;
             cost++;
         }
         while(pos >= leftmost){
-            printf("Moved to Spot %d\n", pos+1);
+            printf("%d. Moved to Spot %d\n", pos+1);
             if(lane[pos] == 1){
                 cost++;
-                printf("Ticket Issued at Spot %d\n", pos+1);
+                printf("%d. Ticket Issued at Spot %d\n", cost, pos+1);
                 lane[pos] = 0;
             }
             pos--;
